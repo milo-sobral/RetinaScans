@@ -10,7 +10,7 @@ int main(int argc, char* argv[]){
   	}
 
   	//Opens a file to store the data and creates some variables
-  	FILE *fp = fopen("dataset.txt", "a+");
+  	FILE *fp = fopen("dataset.txt", "ab");
   	unsigned int image_width, image_height, bits_per_pixel, row_padding, data_size, data_offset;
   	unsigned char *img_data = NULL;
 
@@ -30,6 +30,7 @@ int main(int argc, char* argv[]){
 		printf("Something went wrong somewhere");
 	} 	
 
-
+	fwrite(img_data, sizeof(char), sizeof(img_data), fp);
+	fclose(fp);
 
 }
