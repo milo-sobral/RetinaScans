@@ -10,7 +10,7 @@ int main(int argc, char* argv[]){
   	}
 
   	//Opens a file to store the data and creates some variables
-  	FILE *fp = fopen("dataset.txt", "ab");
+  	FILE *fp = fopen("dataset.txt", "wb");
   	unsigned int image_width, image_height, bits_per_pixel, row_padding, data_size, data_offset;
   	unsigned char *img_data = NULL;
 
@@ -28,9 +28,23 @@ int main(int argc, char* argv[]){
 	//Checks if the array for the pixel values filled without problem
 	if (img_data == NULL){
 		printf("Something went wrong somewhere");
-	} 	
+	}
 
-	fwrite(img_data, sizeof(char), sizeof(img_data), fp);
+	char *c = img_data[0];
+
+	while (*c != '\0'){
+
+		fputs(c, fp);
+		c++;
+
+	}
+
+	// for (int i = 0 ; c != '\0' ; i++){
+	// 	c = img_data[i];
+	// 	printf("I'm a hoe\n");
+	// 	fputs(c, fp);
+	// }
+
 	fclose(fp);
 
 }
