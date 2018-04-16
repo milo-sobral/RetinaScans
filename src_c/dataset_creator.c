@@ -8,7 +8,7 @@
 #include <math.h>
 #include <assert.h>
 
-#include <dataset_creator.h>
+#include "dataset_creator.h"
 
 int bmp_open( char* bmp_filename,        unsigned int *width, 
               unsigned int *height,      unsigned int *bits_per_pixel, 

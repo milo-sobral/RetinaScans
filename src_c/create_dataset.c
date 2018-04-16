@@ -1,10 +1,12 @@
-#include <dataset_creator.c>
+#include <stdio.h>
+#include <stdlib.h>
+#include "dataset_creator.h"
 
 int main(int argc, char* argv[]){
 
 	if( argc < 2 ){
     	printf( "Usage: $ %s <bmp_filename> <1 or 0>\n", argv[0] );
-    	exit(EXIT_FAILURE);
+    	exit(-1);
   	}
 
   	//Opens a file to store the data and creates some variables
@@ -28,6 +30,6 @@ int main(int argc, char* argv[]){
 		printf("Something went wrong somewhere");
 	} 	
 
-	
+
 
 }
