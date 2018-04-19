@@ -25,6 +25,7 @@ public class RetinaScanToolBox {
 	private double[] colorInfo;
 	private BufferedImage scanImage;
 	private boolean type;
+	private int counter;
 
 	//ontructor that takes the image file and stores it for the purpose of the program
 	public RetinaScanToolBox(BufferedImage scanImage, boolean type) {
@@ -78,7 +79,7 @@ public class RetinaScanToolBox {
 	public void writeOnFile(String DestinationFileName) throws IOException {
 
 		//Writes the info about the array
-		FileWriter fw = new FileWriter(DestinationFileName);
+		FileWriter fw = new FileWriter(DestinationFileName, true);
 		BufferedWriter bw = new BufferedWriter(fw);
 		int counter = 0 ;
 

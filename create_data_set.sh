@@ -1,13 +1,13 @@
 for image in `ls $1/*.jpg`
 do
-  mogrify -resize 20% $image
-  java classes/LoadImages.class $image 1 dataset.txt
+  convert $image -resize 400x $image
+  java LoadImages $image 1 dataset.txt
 done
 
 for image in `ls $2/*.jpg`
 do
-  mogrify -resize 20% $image
-  java classes/LoadImages.class $image 2 dataset.txt
+  convert $image -resize 400x $image
+  java LoadImages $image 2 dataset.txt
 done
 
 echo "done"
