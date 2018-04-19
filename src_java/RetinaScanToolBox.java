@@ -24,12 +24,13 @@ public class RetinaScanToolBox {
 	private int width;
 	private double[] colorInfo;
 	private BufferedImage scanImage;
+	private boolean type;
 
 	//ontructor that takes the image file and stores it for the purpose of the program
-	public RetinaScanToolBox(BufferedImage scanImage) {
+	public RetinaScanToolBox(BufferedImage scanImage, boolean type) {
 		try {
 			this.scanImage = scanImage;
-
+			this.type = type;
 			//Initialize the attributes
 			width = scanImage.getWidth();
 			height = scanImage.getHeight();
@@ -81,17 +82,13 @@ public class RetinaScanToolBox {
 		BufferedWriter bw = new BufferedWriter(fw);
 		int counter = 0 ;
 
-		for (int i = 0 ; i < this.colorInfo.length ; i++) {
-
-			if (counter%14 == 0 && counter != 0) {
-				bw.newLine();
-			}
-
+		for (int i = 0 ; i < this.colorInfo.length ; i++)
 			bw.write(this.colorInfo[i] + "\t");
-			counter++;
 
-		}
-
+		if (!this.type)
+			bw.write("\t1\n");
+		else
+			bw.write("\t0\n");
 
 		bw.close();
 		fw.close();
