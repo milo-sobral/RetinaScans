@@ -10,7 +10,7 @@ int main(int argc, char* argv[]){
   	}
 
   	//Opens a file to store the data and creates some variables
-  	FILE *fp = fopen("dataset.txt", "wb");
+  	FILE *fp = fopen("bin/dataset.txt", "ab");
   	unsigned int image_width, image_height, bits_per_pixel, row_padding, data_size, data_offset;
   	unsigned char *img_data = NULL;
 
@@ -30,11 +30,11 @@ int main(int argc, char* argv[]){
 		printf("Something went wrong somewhere");
 	}
 
-	char *c = img_data[0];
+	char *c = &img_data[0];
 
 	while (*c != '\0'){
 
-		fputs(c, fp);
+		printf("%c\n", *c);
 		c++;
 
 	}
@@ -43,8 +43,7 @@ int main(int argc, char* argv[]){
 
 	// for (int i = 0 ; c != '\0' ; i++){
 	// 	c = img_data[i];
-	// 	printf("I'm a hoe\n");
-	// 	fputs(c, fp);
+	// 	printf("%c\n", c);
 	// }
 
 	fclose(fp);
