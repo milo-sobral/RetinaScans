@@ -12,15 +12,18 @@ public class LoadImages{
 
 	public static void main(String[] args){
 
-		System.out.println("Opening " + args[0] + "...");
+		//Checks inputs
+		try {
 
-		if (args[0] == null || args[1] == null || args[2] == null){
-			System.out.println("Usage : java LoadImages <imputFile> <type> <outputFile>");
+			System.out.println("Opening " + args[0] + "...");
+		} catch (Exception e) {
+			System.out.println("Usage : java LoadImages <inputFile> <type> <outputFile>");
 			return;
 		}
 
-		boolean type;
 
+		//Checks the type (positive or negative)
+		boolean type;
 		try {
 			if (Integer.parseInt(args[1]) == 1)
 				type = false;
@@ -31,6 +34,7 @@ public class LoadImages{
 			return;
 		}
 
+		//Scans the image and stores it in the text file
 		try {
 			File image = new File(args[0]);
 			RetinaScanToolBox scanOneImage = new RetinaScanToolBox(ImageIO.read(image), type);
@@ -40,7 +44,7 @@ public class LoadImages{
 		} catch (Exception e){
 			System.out.println("unable to open file");
 		}
-		
+
 	}
 
 }
