@@ -16,7 +16,7 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.lang.reflect.Array;
 //Scans a single image
-//Has a method to treat the image to have tit ready to put in an arrayList
+//Has a method to treat the image to have it ready to put in an arrayList
 //Class that will contain the information for a retina scan so that it can be transformed into a file that can be read by the neural network
 public class RetinaScanToolBox {
 

@@ -16,4 +16,4 @@ dataset_creator.o :
 	gcc -c src_c/dataset_creator.c -o objs/dataset_creator.o
 
 clean :
-	rm -rf objs/* classes/*
+	rm -rf objs/* classes/* add_image
