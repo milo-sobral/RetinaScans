@@ -21,7 +21,6 @@ public class LoadImages{
 			return;
 		}
 
-
 		//Checks the type (positive or negative)
 		boolean type;
 		try {
@@ -41,7 +40,7 @@ public class LoadImages{
 
 			scanOneImage.treatImage();
 			scanOneImage.writeOnFile(args[2]);
-			System.out.println("Done for image : " + args[0] + "\nsize: " + scanOneImage.colorInfo.length);
+			System.out.println("Done for image : " + args[0] + "\nsize: " + scanOneImage.getSize());
 		} catch (Exception e){
 			System.out.println("unable to open file");
 		}

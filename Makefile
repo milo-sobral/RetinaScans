@@ -16,7 +16,7 @@ dataset_creator.o :
 
 #MAKE JAVA PART
 java : src_java/LoadImages.java src_java/RetinaScanToolBox.java
-	javac -d src_java/LoadImages.java src_java/RetinaScanToolBox.java
+	javac -d ./ src_java/LoadImages.java src_java/RetinaScanToolBox.java
 
 #CLEAN UP FILE SYSTEM
 clean :
