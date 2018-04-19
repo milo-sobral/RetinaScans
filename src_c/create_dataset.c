@@ -19,7 +19,7 @@ int main(int argc, char* argv[]){
   	//Opens the bmp file and stores its img data into the array img_data
   	int return_code = bmp_open(file_name , &image_width, &image_height, &bits_per_pixel, &row_padding, &data_size, &data_offset, &img_data );
 
-  	//Checks if the procedure went well 
+  	//Checks if the procedure went well
   	if( return_code ){
     	printf( "create_dataset function returned an error.\n" );
     	return return_code;
@@ -38,6 +38,8 @@ int main(int argc, char* argv[]){
 		c++;
 
 	}
+
+	//Atom github tester
 
 	// for (int i = 0 ; c != '\0' ; i++){
 	// 	c = img_data[i];
